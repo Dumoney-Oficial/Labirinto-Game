@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: 93eb8c615eb39244fa43e4abc52c416f, type: 2}
+      name: Cabo
+    second: {fileID: 2100000, guid: 03920a284046cc4428125347ccea7f0e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: 61f13a55ef5152f4a8fa2915cad14a5f, type: 2}
+      name: Coroa
+    second: {fileID: 2100000, guid: 44a6c7a85cd4ef74ca77878cf569dcab, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
