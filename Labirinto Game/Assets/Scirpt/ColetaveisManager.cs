@@ -5,71 +5,77 @@ public class ColetaveisManager : MonoBehaviour
 {
     [Header("Configuração dos Coletáveis")]
 
-    // Nome que aparecerá na tela
     public string nomeColetavel = "Guarda-Chuvas";
-
-    // Quantidade necessária para abrir a porta
     public int quantidadeNecessaria = 10;
-
 
     [Header("Interface")]
 
-    // Texto que mostra, por exemplo:
-    // Guarda-Chuvas 5/10
     public TMP_Text textoContador;
-
-    // Texto da mensagem da porta
     public TMP_Text textoPorta;
 
+    [Header("Portas")]
 
-    [Header("Porta")]
+    // Permite configurar várias portas
+    public GameObject[] portas;
 
-    // Arraste a porta para este campo no Inspector
-    public GameObject porta;
-
-
-    // Quantidade que o jogador já coletou
+    // Quantidade de coletáveis encontrados
     private int quantidadeColetada = 0;
+
+    // Impede que a abertura aconteça mais de uma vez
+    private bool portaAberta = false;
 
 
     void Start()
     {
-        // Atualiza o texto no começo do jogo
         AtualizarContador();
 
-        // Esconde a mensagem da porta
+        // Esconde a mensagem no início
         textoPorta.gameObject.SetActive(false);
     }
 
 
     public void Coletar()
     {
-        // Adiciona 1 coletável
+        // Adiciona um coletável
         quantidadeColetada++;
 
-        // Atualiza o texto
+        // Atualiza o contador
         AtualizarContador();
 
-
-        // Verifica se chegou na quantidade necessária
-        if (quantidadeColetada >= quantidadeNecessaria)
+        // Verifica se coletou todos os itens necessários
+        if (quantidadeColetada >= quantidadeNecessaria && !portaAberta)
         {
-            // Mostra a mensagem
+            portaAberta = true;
+
+            // Mostra a mensagem na tela
             textoPorta.gameObject.SetActive(true);
+            textoPorta.text = "As portas foram abertas!";
 
-            textoPorta.text = "A porta foi aberta!";
+            // Faz todas as portas desaparecerem
+            for (int i = 0; i < portas.Length; i++)
+            {
+                if (portas[i] != null)
+                {
+                    portas[i].SetActive(false);
+                }
+            }
 
-            // Faz a porta desaparecer
-            porta.SetActive(false);
+            // Esconde a mensagem depois de 3 segundos
+            Invoke("EsconderMensagemPorta", 3f);
         }
     }
 
 
     void AtualizarContador()
     {
-        // Atualiza o texto da tela
         textoContador.text = nomeColetavel + " " +
                              quantidadeColetada + "/" +
                              quantidadeNecessaria;
+    }
+
+
+    void EsconderMensagemPorta()
+    {
+        textoPorta.gameObject.SetActive(false);
     }
 }
