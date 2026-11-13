@@ -241,7 +241,7 @@ MonoBehaviour:
   nomeColetavel: Guarda-Chuvas
   quantidadeNecessaria: 12
   textoContador: {fileID: 2041836404}
-  portasDesbloqueadas: 0
+  portasDesbloqueadas: 1
 --- !u!4 &140078705
 Transform:
   m_ObjectHideFlags: 0
@@ -277,11 +277,11 @@ MonoBehaviour:
   velocidadeMovimento: 5
   multiplicadorCorrida: 2
   velocidadeRotacao: 150
-  forcaPulo: 5
+  forcaPulo: 8
   layerChao:
     serializedVersion: 2
     m_Bits: 8
-  checadorChao: {fileID: 0}
+  checadorChao: {fileID: 2071856242}
   raioChecagem: 0.2
   prefabProjetil: {fileID: 0}
   pontoDeDisparo: {fileID: 0}
@@ -295,7 +295,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153782426}
   serializedVersion: 5
-  m_Mass: 50
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -312,7 +312,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 16
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &153782431
 CapsuleCollider:
@@ -337,6 +337,25 @@ CapsuleCollider:
   m_Height: 4.698553
   m_Direction: 1
   m_Center: {x: 0.03764248, y: 2.3680797, z: 0}
+--- !u!4 &153782433 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
+  m_PrefabInstance: {fileID: 263985997}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &153782434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153782426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 835bba9a85e762941b0d327396db9176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerColeta
+  gerenciador: {fileID: 140078704}
+  textoColeta: {fileID: 1495658987}
 --- !u!1001 &221580499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -405,6 +424,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fonte
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: eef888f559cb27045af0aed7f716e0f9, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -465,6 +488,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "Port\xE3o_do_Labirinto 2"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2ba8fa68e7f30604a8c27b32f0fc9a35, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -485,16 +512,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2929
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2929
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2929
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.35621
+      value: 0.77
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0000020622076
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -27.056522
+      value: -17.89
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
       propertyPath: m_LocalRotation.w
@@ -528,17 +567,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vovo_turbo
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 76c2a75e35c69fa4d9c7e85bd08fcc7f, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
+      propertyPath: m_AnimatePhysics
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2071856242}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
       insertIndex: -1
       addedObject: {fileID: 153782430}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 153782434}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 829200a680453cf4c8f06f19941d1767, type: 3}
       insertIndex: -1
       addedObject: {fileID: 153782429}
@@ -779,6 +832,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 1f1c0f8c1b17a7145bd13242edd5a5e9, type: 3}
       propertyPath: m_Name
       value: Porta_da_Casa
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f1c0f8c1b17a7145bd13242edd5a5e9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1571,7 +1628,7 @@ GameObject:
   - component: {fileID: 823362443}
   - component: {fileID: 823362442}
   - component: {fileID: 823362441}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2415,6 +2472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Labirinto
       objectReference: {fileID: 0}
+    - target: {fileID: 3374113260362209771, guid: a069b822d8d852f4d8bdf329b10f344b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -4331024933893142650, guid: a069b822d8d852f4d8bdf329b10f344b, type: 3}
@@ -3102,6 +3163,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7664536980775425624, guid: 240af7e7d0bf4a94a9b9183a46bdfb84, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -6156058261406820504, guid: 240af7e7d0bf4a94a9b9183a46bdfb84, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -3299533176686943485, guid: 240af7e7d0bf4a94a9b9183a46bdfb84, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -2416339750986074581, guid: 240af7e7d0bf4a94a9b9183a46bdfb84, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3113,6 +3186,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 240af7e7d0bf4a94a9b9183a46bdfb84, type: 3}
       propertyPath: m_Name
       value: Casa
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 240af7e7d0bf4a94a9b9183a46bdfb84, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1929932570361572310, guid: 240af7e7d0bf4a94a9b9183a46bdfb84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3783,6 +3860,7 @@ GameObject:
   - component: {fileID: 1655576892}
   - component: {fileID: 1655576891}
   - component: {fileID: 1655576890}
+  - component: {fileID: 1655576894}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -3901,13 +3979,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655576889}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.14609832, y: 0.8448849, z: -0.29100022, w: -0.42443332}
-  m_LocalPosition: {x: -17.47, y: 8.9, z: -21.2}
+  m_LocalRotation: {x: -0.27982885, y: 0.01705815, z: -0.005049686, w: -0.95988506}
+  m_LocalPosition: {x: 0.8275105, y: 1.652591, z: -19.349789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 38.006, y: -126.65, z: 0.011}
+--- !u!114 &1655576894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655576889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bb1878f45405547aa46bb99fb90465, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraPlayer
+  alvoPlayer: {fileID: 153782433}
+  distanciaX_Z: 3
+  alturaY: 3.5
+  suavidadeSeguimento: 300
+  distanciaMinima: 0.5
+  margemColisao: 0.2
+  camadasObstaculos:
+    serializedVersion: 2
+    m_Bits: 72
 --- !u!4 &1695662566 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4147607409649432286, guid: b2dd700d684982c47b5baf44235fa417, type: 3}
@@ -4078,7 +4177,7 @@ GameObject:
   - component: {fileID: 1890826498}
   - component: {fileID: 1890826497}
   - component: {fileID: 1890826496}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9013,6 +9112,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2071856241
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2071856242}
+  m_Layer: 0
+  m_Name: Checa chao
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2071856242
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071856241}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 153782433}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2140180073
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9068,6 +9198,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2ba8fa68e7f30604a8c27b32f0fc9a35, type: 3}
       propertyPath: m_Name
       value: "Port\xE3o_do_Labirinto 1"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2ba8fa68e7f30604a8c27b32f0fc9a35, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
